@@ -6,15 +6,18 @@ import { ActivityEntity } from "../activity.entity";
 describe("AccountEntity", () => {
   it("should calculatesBalance", async () => {
     const accountId: AccountId = "1";
+    const ownerAccountId: AccountId = "2";
 
     const firstActivity = new ActivityEntity(
       "42",
+      ownerAccountId,
       accountId,
       new Date(),
       MoneyEntity.of(999)
     );
     const secondActivity = new ActivityEntity(
       "42",
+      ownerAccountId,
       accountId,
       new Date(),
       MoneyEntity.of(1)
